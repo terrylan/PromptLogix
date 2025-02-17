@@ -13,7 +13,7 @@ PromptLogix is a simple web-based UI tool for managing prompt versions using PHP
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/PromptLogix.git
+   git clone https://github.com/terrylan/PromptLogix.git
    cd PromptLogix
    ```
 2. Set up the database:
