@@ -51,5 +51,5 @@ PromptLogix is a simple web-based UI tool for managing prompt versions using PHP
 MIT License
 
 ## Author
-[Terrylan](https://github.com/terrylan)
+Terrylan - 
 
