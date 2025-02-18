@@ -4,7 +4,7 @@ include 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
-    $content = $_POST['content'];
+    $content = htmlspecialchars_decode($_POST['content']);
 
     // Get the next available prompt_id
     $promptIdResult = $conn->query("SELECT MAX(prompt_id) AS max_id FROM prompts");
