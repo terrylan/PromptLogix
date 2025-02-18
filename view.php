@@ -22,6 +22,15 @@ if ($result->num_rows == 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Prompt</title>
     <link rel="stylesheet" href="assets/style.css">
+    <script>
+        function copyToClipboard(content) {
+            navigator.clipboard.writeText(content).then(() => {
+                alert("Copied to clipboard!");
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -45,9 +54,10 @@ if ($result->num_rows == 0) {
                         <td><?php echo nl2br(htmlspecialchars($row['content'])); ?></td>
                         <td><?php echo $row['updated_at']; ?></td>
                         <td>
-                            <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn">Edit</a>
-                            <a href="branch.php?id=<?php echo $row['id']; ?>" class="btn">Branch</a>
-                            <a href="hide.php?id=<?php echo $row['id']; ?>" class="btn">Hide</a>
+                            <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn">Edit</a> |
+                            <a href="branch.php?id=<?php echo $row['id']; ?>" class="btn">Branch</a> |
+                            <a href="hide.php?id=<?php echo $row['id']; ?>" class="btn">Hide</a> |
+                            <a href="#" onclick="copyToClipboard(`<?php echo addslashes($row['content']); ?>`); return false;">Copy</a>
                         </td>
                     </tr>
                 <?php endwhile; ?>
