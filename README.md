@@ -44,6 +44,7 @@ PromptLogix is a simple web-based UI tool for managing prompt versions using PHP
 - **Editing a Prompt**: `edit.php` inserts a new version while keeping the original.
 - **Branching a Prompt**: `branch.php` creates a new prompt ID from an existing prompt.
 - **Hiding/Unhiding Prompts**: `hide.php` and `unhide.php` manage visibility.
+- **View hidden Prompts**: `hidden.php` shows all hidden prompt versions.
 - **Viewing Versions**: `view.php` shows all versions of a prompt.
 - **Exporting Data**: Use `export.php` to download prompt data.
 
