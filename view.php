@@ -42,7 +42,7 @@ if ($result->num_rows == 0) {
                     <th>Version</th>
                     <th>Name</th>
                     <th>Prompt</th>
-                    <th>Last Updated</th>
+                    <!--th>Last Updated</th-->
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -52,7 +52,7 @@ if ($result->num_rows == 0) {
                         <td><?php echo $row['version']; ?></td>
                         <td><?php echo htmlspecialchars($row['name']); ?></td>
                         <td><?php echo nl2br(htmlspecialchars($row['content'])); ?></td>
-                        <td><?php echo $row['updated_at']; ?></td>
+                        <!--td><?#php echo $row['updated_at']; ?></td-->
                         <td>
                             <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn">Edit</a> |
                             <a href="branch.php?id=<?php echo $row['id']; ?>" class="btn">Branch</a> |
