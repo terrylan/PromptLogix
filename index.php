@@ -11,14 +11,15 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PromptLogix - Home</title>
+    <title>_logix - Home</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>PromptLogix</h1>
-        <a href="add.php" class="btn">Add New Prompt</a> | 
-        <a href="hidden.php" class="btn">Show Archived Prompt</a>
+        <h1>_logix</h1>
+        <a href="add.php" class="btn">New</a> | 
+        <a href="hidden.php" class="btn">Archive</a> |
+        <a href="export.php" class="btn">Export</a>
         <table>
             <thead>
                 <tr>
@@ -26,17 +27,17 @@ $result = $conn->query($sql);
                     <th>Name</th>
                     <th>Version</th>
                     <th>Prompt</th>
-                    <th>Last Updated</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while ($row = $result->fetch_assoc()): ?>
                     <tr>
                         <td><?php echo $row['prompt_id']; ?></td>
-                        <td><?php echo htmlspecialchars($row['name']); ?></td>
+                        <td><?php echo $row['name']; ?></td>
                         <td><?php echo $row['version']; ?></td>
-                        <td><a href="view.php?id=<?php echo $row['prompt_id']; ?>" class="btn"><?php echo htmlspecialchars($row['content']); ?></a></td>
-                        <td><?php echo $row['updated_at']; ?></td>
+                        <td><a href="view.php?pid=<?php echo $row['prompt_id']; ?>" class="btn"><?php echo $row['content']; ?></a></td>
+                        <td><a href="#" onclick="copyToClipboard(`<?php echo addslashes($row['content']); ?>`); return false;">Copy</a></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
