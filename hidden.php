@@ -16,6 +16,7 @@ $result = $conn->query("SELECT * FROM prompts WHERE hidden = 1 ORDER BY updated_
 <body>
     <div class="container">
         <h1>Hidden Prompts</h1>
+        <a href="delete.php" class="btn">Delete Archive</a>
         <table>
             <thead>
                 <tr>
