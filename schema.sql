@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS prompts (
     name VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
     version DECIMAL(5,2) NOT NULL,
-    change_type ENUM('Create', 'Update', 'Branch') NOT NULL,
+    change_type ENUM('Initial','Update','Refinement','Branch') NOT NULL,
     hidden TINYINT(1) DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
